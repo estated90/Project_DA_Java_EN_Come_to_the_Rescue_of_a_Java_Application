@@ -10,35 +10,48 @@ public class AnalyticsCounter {
 	private static int pupilCount = 0;
 	
 	public static void main(String args[]) throws Exception {
-		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("E:\\Google Drive\\Documents\\GitHub\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt"));
+		
+		// Declaration of the file to read
+		BufferedReader reader = new BufferedReader (new FileReader("Project02Eclipse\\symptoms.txt"));
 		String line = reader.readLine();
 
-		int headCount = 0;
-
-		while (line != null) {
-		
-			System.out.println("symptom from file: " + line);
-			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
+		while (line != null) 
+		{
+			/*System.out.println("symptom from file: " + line);
+			if (line.equals("headache")) 
+			{
+					headCount++;
+					System.out.println("number of headaches: " + headCount);
 			}
-			else if (line.equals("rash")) {
+			else if (line.equals("rash")) 
+			{
 				rashCount++;
 			}
-			else if (line.contains("pupils")) {
+			else if (line.contains("pupils")) 
+			{
 				pupilCount++;
-			}
-
-			line = reader.readLine();	// get another symptom
+			}*/
+			TreeMapTest.create();
+			TreeMapTest.insert(line, 1);
+			// get another symptom
+			line = reader.readLine();
 		}
-		reader.close();
 		
 		// next generate output
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
+
+		
+		//Closing the resources
+		if (reader != null)
+			{
+			reader.close();
+			}
+		if (writer !=null)
+		{
+			writer.close();
+		}
 	}
 }
