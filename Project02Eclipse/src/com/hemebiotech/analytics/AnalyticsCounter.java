@@ -6,10 +6,11 @@ import java.io.IOException;
 
 /**
  * 
- * @author Nicolas
+ * 
  * The program will read all document symptom.txt in the Project02Eclipse file
  * Creation of a TreeMap to order the symptom and avoid any duplicate
  * Then the program will sum up the the results in a file
+ * @author Nicolas
  * 
  */
 
