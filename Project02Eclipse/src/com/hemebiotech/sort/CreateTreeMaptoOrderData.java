@@ -34,6 +34,7 @@ public class CreateTreeMaptoOrderData implements ICreate
 			{
 				treeMap.put(line, 1);
 			}
+			System.out.println(line + " : " + ValueOfKey(line));
 		}
 		return treeMap;
 	}
