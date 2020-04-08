@@ -17,17 +17,22 @@ public class AnalyticsCounter
 	ISymptomReader listSymptom = new ReadSymptomDataFromFile(filePath);
 
 	//Default Builder
-	public AnalyticsCounter()
-	{
-		System.out.println("Reading the file");
+	public AnalyticsCounter(String filePath, String symptom, List<String> listFromFile, int occurences,
+			ISymptomReader listSymptom) {
+		super();
+		this.filePath = filePath;
+		Symptom = symptom;
+		this.listFromFile = listFromFile;
+		Occurences = occurences;
+		this.listSymptom = listSymptom;
 	}
-	
+
 	//Builder with Parameters
 	public AnalyticsCounter(String filePath)
 	{
 		System.out.println("Reading the file with the parameters");
 		ReadSymptomDataFromFile readSymptomFile = new ReadSymptomDataFromFile(filePath);
-		listFromFile = readSymptomFile.GetSymptoms();
+		listFromFile = readSymptomFile.getSymptoms();
 		
 	}
 	  //*************   ACCESSEURS *************

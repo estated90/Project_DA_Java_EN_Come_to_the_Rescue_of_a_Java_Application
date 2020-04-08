@@ -16,9 +16,6 @@ public interface ISymptomReader {
 	 * 
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 	 */
-	static List<String> GetSymptoms () {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<String> getSymptoms ();
 	
 }

@@ -19,7 +19,7 @@ public class CreateTreeMaptoOrderData implements ICreate
 	}
 	
 	@Override
-	public Map<String, Integer> TreeMapCreation()
+	public Map<String, Integer> treeMapCreation()
 	{
 		it = listToRead.listIterator();
 		treeMap = new TreeMap<String, Integer>();
