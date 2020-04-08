@@ -1,57 +1,44 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
-/**
- * 
- * 
- * The program will read all document symptom.txt in the Project02Eclipse file
- * Creation of a TreeMap to order the symptom and avoid any duplicate
- * Then the program will sum up the the results in a file
- * @author Nicolas
- * 
- */
+import java.util.List;
 
-public class AnalyticsCounter {
+import com.hemebiotech.reader.*;
+
+public class AnalyticsCounter 
+{
+	// Stock the path of the file
+	String filePath, Symptom;
+	List<String> listFromFile;
+	int Occurences;
 	
-	public static void main(String args[]) throws Exception {
+	//Instances of behavior
+
+	ISymptomReader listSymptom = new ReadSymptomDataFromFile(filePath);
+
+	//Default Builder
+	public AnalyticsCounter()
+	{
+		System.out.println("Reading the file");
+	}
+	
+	//Builder with Parameters
+	public AnalyticsCounter(String filePath)
+	{
+		System.out.println("Reading the file with the parameters");
+		ReadSymptomDataFromFile readSymptomFile = new ReadSymptomDataFromFile(filePath);
+		listFromFile = readSymptomFile.GetSymptoms();
 		
-		// Declaration of the file to read
-		try
-		{
-		BufferedReader reader = new BufferedReader (new FileReader("Project02Eclipse\\symptoms.txt"));
-		String line = reader.readLine();
-		
-		// Call class to create a TreeMap
-		TreeMapTest.create();
-		
-		// Read all the line, create or add the symptom to the list
-		while (line != null) 
-		{	
-			if (TreeMapTest.search(line))
-			{
-				TreeMapTest.insert(line, TreeMapTest.ValueOfKey(line)+1);
-			}
-			else
-			{
-				TreeMapTest.insert(line, 1);
-			}
-			// get another symptom
-			line = reader.readLine();
-		}
-		//Closing the resources
-		if (reader != null)
-		{
-			reader.close();
-		}
-		
-		TreeMapTest.NewFileOut();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+	}
+	  //*************   ACCESSEURS *************
+	public String GetPath()
+	{
+		return filePath;
+	}
+	  //*************   MUTATEURS   *************
+	public void setPath(String pPath)
+	{
+		this.filePath = pPath;
 	}
 }
+
