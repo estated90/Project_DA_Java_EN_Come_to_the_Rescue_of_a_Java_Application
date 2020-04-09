@@ -5,6 +5,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeMap;
 
+/** 
+ * Will read all the lines of the communicated String
+ * @author nicolas
+ *
+ */
 
 public class CreateTreeMaptoOrderData implements ICreate
 {
@@ -13,6 +18,10 @@ public class CreateTreeMaptoOrderData implements ICreate
 	private List<String> listToRead;
 	private ListIterator<String> it;
 	
+	/**
+	 * 
+	 * @param result a list of String with duplicates.
+	 */
 	public CreateTreeMaptoOrderData(List<String>result)
 	{
 		this.listToRead = result;
@@ -39,6 +48,11 @@ public class CreateTreeMaptoOrderData implements ICreate
 		return treeMap;
 	}
 	
+	/**
+	 * Function to search in the TreeMap for existing value
+	 * @param lookedValue the key to look for
+	 * @return a boolean to advise if the value exist or not
+	 */
     public boolean Search(Object lookedValue) 
     { 
     	boolean testResult;
@@ -46,12 +60,16 @@ public class CreateTreeMaptoOrderData implements ICreate
     	
         return testResult;
     }
-
+    /**
+     * Function to get the value attach to a key
+     * @param key to look for in the TreeMap
+     * @return the integer value attach to the key to implement it
+     */
     public int ValueOfKey(String key)
     {
-    	int i;
-    	i = treeMap.get(key);
-    	return i;
+    	int occrurencesOfKey;
+    	occrurencesOfKey = treeMap.get(key);
+    	return occrurencesOfKey;
     }
 
 }

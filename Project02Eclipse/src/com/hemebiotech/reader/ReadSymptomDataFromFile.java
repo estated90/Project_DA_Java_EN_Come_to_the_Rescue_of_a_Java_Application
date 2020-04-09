@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Simple brute force implementation
+ * Exception will be risen if an error in the reader or the close
  *
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
@@ -15,7 +16,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	private String filepath;
 	
 	/**
-	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
 	public ReadSymptomDataFromFile (String filepath) {
@@ -44,7 +44,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				try {
 					reader.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -52,5 +51,4 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		
 		return result;
 	}
-
 }

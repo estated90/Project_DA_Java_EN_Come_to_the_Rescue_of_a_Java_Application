@@ -1,6 +1,4 @@
 package com.hemebiotech.analytics;
-
-
 import java.util.List;
 import java.util.Map;
 
@@ -10,29 +8,41 @@ import com.hemebiotech.sort.ICreate;
 import com.hemebiotech.writer.IWriter;
 import com.hemebiotech.writer.Writer;
 
+/**
+ * 
+ * AlayticsCounter will read the String to extract the data.
+ * 
+ * @see ReadSymptomDataFromFile
+ * 
+ * The result will be sorted and counted
+ * 
+ * @see CreateTreeMaptoOrderData
+ * 
+ * Then the sorted data will be written in an out file
+ * 
+ * @see Writer
+ * 
+ * 
+ * @author nicolas
+ * @version 1.1
+ *
+ */
+
 public class AnalyticsCounter 
 {
 	// Stock the path of the file
-	String filePath, Symptom;
+	String filePath;
 	Map<String, Integer> dataToPrint;
 	List<String> listFromFile;
-	int Occurences;
 	
-	//Instances of behavior
-
-	
-	
-
-	//Default Builder
-	public AnalyticsCounter(String filePath, String symptom, List<String> listFromFile, int occurences,
-			ISymptomReader listSymptom) {
+	//Default builder
+	public AnalyticsCounter(String filePath, Map<String, Integer> dataToPrint, List<String> listFromFile) {
 		super();
 		this.filePath = filePath;
-		Symptom = symptom;
+		this.dataToPrint = dataToPrint;
 		this.listFromFile = listFromFile;
-		Occurences = occurences;
 	}
-
+	
 	//Builder with Parameters
 	public AnalyticsCounter(String filePath)
 	{
@@ -43,6 +53,33 @@ public class AnalyticsCounter
 		dataToPrint = treeMapCreation.treeMapCreation();
 		IWriter createFileOut = new Writer(dataToPrint);
 		createFileOut.newFileOut();
+	}
+
+
+	//Getter to return the value of the variable
+	public String getFilePath() {
+		return filePath;
+	}
+	public Map<String, Integer> getDataToPrint() {
+		return dataToPrint;
+	}
+
+
+	public List<String> getListFromFile() {
+		return listFromFile;
+	}
+
+	
+	//Setter of the program 
+	public void setDataToPrint(Map<String, Integer> dataToPrint) {
+		this.dataToPrint = dataToPrint;
+	}
+
+	public void setListFromFile(List<String> listFromFile) {
+		this.listFromFile = listFromFile;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 }
 

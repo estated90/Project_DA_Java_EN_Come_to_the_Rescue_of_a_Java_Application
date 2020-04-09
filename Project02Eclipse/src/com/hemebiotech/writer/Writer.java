@@ -5,11 +5,21 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Simple read of a Map data then write it
+ * Exception will be risen if an error occur in the writer or the close 
+ * @author nicolas
+ *
+ */
+
 public class Writer implements IWriter{
     
 	private Map<String,Integer> dataToPrint;
 
-	
+	/**
+	 * 
+	 * @param treeMap of the data top write with parameters String and Integer
+	 */
 	public Writer(Map<String,Integer>treeMap)
 	{
 		this.dataToPrint = treeMap;
