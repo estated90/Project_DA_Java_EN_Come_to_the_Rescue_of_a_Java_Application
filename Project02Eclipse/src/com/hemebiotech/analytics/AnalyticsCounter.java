@@ -31,24 +31,25 @@ import com.hemebiotech.writer.Writer;
 public class AnalyticsCounter 
 {
 	// Stock the path of the file
-	String filePath;
-	Map<String, Integer> dataToPrint;
-	List<String> listFromFile;
+	private String filePath;
+	private Map<String, Integer> dataToPrint;
+	private List<String> listFromFile;
+	
+
 	
 	//Default builder
-	public AnalyticsCounter(String filePath, Map<String, Integer> dataToPrint, List<String> listFromFile) {
-		super();
-		this.filePath = filePath;
-		this.dataToPrint = dataToPrint;
-		this.listFromFile = listFromFile;
+	public AnalyticsCounter() {
+		this.listFromFile = null;
+		this.dataToPrint = null;
+		
 	}
 	
 	//Builder with Parameters
 	public AnalyticsCounter(String filePath)
 	{
-		ISymptomReader readSymptomFile = new ReadSymptomDataFromFile(filePath);
 		System.out.println("Reading the file with the parameters");
-		listFromFile = readSymptomFile.getSymptoms();
+		ISymptomReader readDataFromFile = new ReadSymptomDataFromFile(filePath);
+		listFromFile = readDataFromFile.getSymptoms();
 		ICreate treeMapCreation = new CreateTreeMaptoOrderData(listFromFile);
 		dataToPrint = treeMapCreation.treeMapCreation();
 		IWriter createFileOut = new Writer(dataToPrint);

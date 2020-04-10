@@ -11,8 +11,7 @@ import java.util.Map;
  *
  */
 
-public interface ICreate 
-{
+public interface ICreate{
 	/**
 	 * @return Return a sorted and counted list with unique values
 	 */

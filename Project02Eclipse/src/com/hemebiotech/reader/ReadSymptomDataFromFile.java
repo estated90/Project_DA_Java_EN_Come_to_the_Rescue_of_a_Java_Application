@@ -10,26 +10,28 @@ import java.util.List;
  * Simple brute force implementation
  * Exception will be risen if an error in the reader or the close
  *
+ *@author nicolas
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath;
+	private String filePath;
 	
 	/**
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
-	public ReadSymptomDataFromFile (String filepath) {
-		this.filepath = filepath;
+	public ReadSymptomDataFromFile (String filePath) {
+		this.filePath = filePath;
 	}
 	
-	@Override
 	public List<String> getSymptoms() {
-		ArrayList<String> result = new ArrayList<String>();
-		BufferedReader reader = null;
-		if (filepath != null) {
+		ArrayList<String> 	result = new ArrayList<String>();
+		BufferedReader 		reader = null;
+		String				line = null;
+		
+		if (filePath != null) {
 			try {
-				reader = new BufferedReader (new FileReader(filepath));
-				String line = reader.readLine();
+				reader = new BufferedReader (new FileReader(filePath));
+				line = reader.readLine();
 				
 				while (line != null) {
 					result.add(line);
@@ -38,9 +40,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				try {
 					reader.close();
 				} catch (IOException e) {
@@ -48,7 +48,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				}
 			}
 		}
-		
 		return result;
 	}
 }

@@ -5,8 +5,7 @@ package com.hemebiotech.writer;
  * Will write the values in an out files located at the root file
  * 
  */
-public interface IWriter 
-{
+public interface IWriter{
 	/**
 	 * Read the Map and write it line after line
 	 * 
