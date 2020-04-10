@@ -16,7 +16,6 @@ import com.hemebiotech.reader.IReader;
  *
  */
 
-public class Main {
 public class RunProgram {
 
 	public static void main(String[] args) {
