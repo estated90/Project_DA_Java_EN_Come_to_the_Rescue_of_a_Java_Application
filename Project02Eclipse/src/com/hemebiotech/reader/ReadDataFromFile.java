@@ -12,18 +12,18 @@ import java.util.List;
  *
  *@author nicolas
  */
-public class ReadSymptomDataFromFile implements ISymptomReader {
+public class ReadDataFromFile implements IReader {
 
 	private String filePath;
 	
 	/**
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
-	public ReadSymptomDataFromFile (String filePath) {
+	public ReadDataFromFile (String filePath) {
 		this.filePath = filePath;
 	}
 	
-	public List<String> getSymptoms() {
+	public List<String> getData() {
 		ArrayList<String> 	result = new ArrayList<String>();
 		BufferedReader 		reader = null;
 		String				line = null;

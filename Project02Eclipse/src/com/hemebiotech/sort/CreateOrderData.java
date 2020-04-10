@@ -11,7 +11,7 @@ import java.util.TreeMap;
  *
  */
 
-public class CreateTreeMaptoOrderData implements ICreate {
+public class CreateOrderData implements ICreate {
 	
 	private ListIterator<String> 	it;
 	private String 					line;
@@ -22,7 +22,7 @@ public class CreateTreeMaptoOrderData implements ICreate {
 	 * 
 	 * @param result a list of String with duplicates.
 	 */
-	public CreateTreeMaptoOrderData(List<String>result){
+	public CreateOrderData(List<String>result){
 		this.listToRead = result;
 	}
 	

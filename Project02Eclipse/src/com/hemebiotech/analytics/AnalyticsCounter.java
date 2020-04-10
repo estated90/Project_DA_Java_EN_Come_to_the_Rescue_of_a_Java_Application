@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.hemebiotech.reader.*;
-import com.hemebiotech.sort.CreateTreeMaptoOrderData;
+import com.hemebiotech.sort.CreateOrderData;
 import com.hemebiotech.sort.ICreate;
 import com.hemebiotech.writer.IWriter;
 import com.hemebiotech.writer.Writer;
@@ -12,11 +12,11 @@ import com.hemebiotech.writer.Writer;
  * 
  * AlayticsCounter will read the String to extract the data.
  * 
- * @see ReadSymptomDataFromFile
+ * @see ReadDataFromFile
  * 
  * The result will be sorted and counted
  * 
- * @see CreateTreeMaptoOrderData
+ * @see CreateOrderData
  * 
  * Then the sorted data will be written in an out file
  * 
@@ -48,9 +48,9 @@ public class AnalyticsCounter
 	public AnalyticsCounter(String filePath)
 	{
 		System.out.println("Reading the file with the parameters");
-		ISymptomReader readDataFromFile = new ReadSymptomDataFromFile(filePath);
-		listFromFile = readDataFromFile.getSymptoms();
-		ICreate treeMapCreation = new CreateTreeMaptoOrderData(listFromFile);
+		IReader readDataFromFile = new ReadDataFromFile(filePath);
+		listFromFile = readDataFromFile.getData();
+		ICreate treeMapCreation = new CreateOrderData(listFromFile);
 		dataToPrint = treeMapCreation.treeMapCreation();
 		IWriter createFileOut = new Writer(dataToPrint);
 		createFileOut.newFileOut();
