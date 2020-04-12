@@ -34,29 +34,34 @@ public class AnalyticsCounter
 	private String filePath;
 	private Map<String, Integer> dataToPrint;
 	private List<String> listFromFile;
-	
-
-	
+	//Instances declaration
+	IReader readDataFromFile = null;
+	ICreate treeMapCreation = null;
+	IWriter createFileOut = null;
 	//Default builder
-	public AnalyticsCounter() {
-		this.listFromFile = null;
-		this.dataToPrint = null;
-		
+	public AnalyticsCounter(String filePath, Map<String, Integer> dataToPrint, List<String> listFromFile,
+			IReader readDataFromFile, ICreate treeMapCreation, IWriter createFileOut) {
+		super();
+		System.out.println("Reading the file without the parameters");
+		this.filePath = filePath;
+		this.dataToPrint = dataToPrint;
+		this.listFromFile = listFromFile;
+		this.readDataFromFile = readDataFromFile;
+		this.treeMapCreation = treeMapCreation;
+		this.createFileOut = createFileOut;
 	}
-	
 	//Builder with Parameters
-	public AnalyticsCounter(String filePath)
+	public AnalyticsCounter(String filePathSent)
 	{
+		filePath = filePathSent;
 		System.out.println("Reading the file with the parameters");
-		IReader readDataFromFile = new ReadDataFromFile(filePath);
+		readDataFromFile = new ReadDataFromFile(filePath);
 		listFromFile = readDataFromFile.getData();
-		ICreate treeMapCreation = new CreateOrderData(listFromFile);
+		treeMapCreation = new CreateOrderData(listFromFile);
 		dataToPrint = treeMapCreation.treeMapCreation();
-		IWriter createFileOut = new Writer(dataToPrint);
+		createFileOut = new Writer(dataToPrint);
 		createFileOut.newFileOut();
 	}
-
-
 	//Getter to return the value of the variable
 	public String getFilePath() {
 		return filePath;
@@ -64,13 +69,9 @@ public class AnalyticsCounter
 	public Map<String, Integer> getDataToPrint() {
 		return dataToPrint;
 	}
-
-
 	public List<String> getListFromFile() {
 		return listFromFile;
 	}
-
-	
 	//Setter of the program 
 	public void setDataToPrint(Map<String, Integer> dataToPrint) {
 		this.dataToPrint = dataToPrint;

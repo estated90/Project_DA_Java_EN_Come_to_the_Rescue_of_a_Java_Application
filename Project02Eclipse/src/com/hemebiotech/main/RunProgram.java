@@ -18,13 +18,13 @@ import com.hemebiotech.reader.IReader;
 
 public class RunProgram {
 
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
-		AnalyticsCounter CreateFileWithSymptoms = new AnalyticsCounter("Project02Eclipse\\Symptoms.txt");
-		CreateFileWithSymptoms.getFilePath();
-		
+		 AnalyticsCounter createFileWithSymptoms = new AnalyticsCounter("Project02Eclipse\\Symptoms.txt");
+		 System.out.println("The file located in " + createFileWithSymptoms.getFilePath() + " has been read.");
+		 System.out.println("A file result.out has been created at the root folder");
 				
 	}
 
