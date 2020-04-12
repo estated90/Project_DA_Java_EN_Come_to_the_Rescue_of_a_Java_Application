@@ -17,7 +17,7 @@ public class AnalyticsCounter {
 		FileWriter 		writer = null;
 		
 		try {
-			reader = new BufferedReader (new FileReader("\\Project02Eclipse\\symptoms.txt"));
+			reader = new BufferedReader (new FileReader("Project02Eclipse\\symptoms.txt"));
 			line = reader.readLine();
 			while (line != null) {
 				System.out.println("symptom from file: " + line);
