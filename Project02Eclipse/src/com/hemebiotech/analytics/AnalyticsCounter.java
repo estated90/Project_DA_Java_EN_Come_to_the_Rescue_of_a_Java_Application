@@ -15,7 +15,6 @@ public class AnalyticsCounter {
 		BufferedReader 	reader = null;
 		String 			line = null;
 		FileWriter 		writer = null;
-		
 		try {
 			reader = new BufferedReader (new FileReader("Project02Eclipse\\symptoms.txt"));
 			line = reader.readLine();
@@ -31,7 +30,6 @@ public class AnalyticsCounter {
 					else if (line.contains("pupils")) {
 						pupilCount++;
 					}
-	
 				line = reader.readLine();	// get another symptom
 			}
 		} catch(IOException e) {
