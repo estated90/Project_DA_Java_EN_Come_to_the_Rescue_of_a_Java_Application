@@ -1,5 +1,6 @@
 package com.hemebiotech.sort;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,5 +16,5 @@ public interface ICreate{
 	/**
 	 * @return Return a sorted and counted list with unique values
 	 */
-	public Map<String, Integer> treeMapCreation();
+	public Map<String, Integer> treeMapCreation(List<String> list);
 }
