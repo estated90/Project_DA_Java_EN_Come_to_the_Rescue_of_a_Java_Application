@@ -13,17 +13,17 @@ import java.util.List;
  *@author nicolas
  */
 public class ReadDataFromFile implements IReader {
-
-	private String filePath;
 	
+	private String filePath;
+
 	/**
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
-	public ReadDataFromFile (String filePath) {
-		this.filePath = filePath;
-	}
 	
-	public List<String> getData() {
+	public ReadDataFromFile () {}
+	
+	public List<String> getData(String filePathToRead) {
+		this.filePath = filePathToRead;
 		ArrayList<String> 	result = new ArrayList<String>();
 		BufferedReader 		reader = null;
 		String				line = null;

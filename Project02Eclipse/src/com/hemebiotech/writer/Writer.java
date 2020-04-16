@@ -20,14 +20,11 @@ public class Writer implements IWriter{
 	 * 
 	 * @param treeMap of the data top write with parameters String and Integer
 	 */
-	public Writer(Map<String,Integer>treeMap)
-	{
-		this.dataToPrint = treeMap;
-	}
+	public Writer(){}
 	
 	@Override
-	public void newFileOut()
-    {
+	public void newFileOut(Map<String, Integer> treeMap) {
+		this.dataToPrint = treeMap;
         Set<String> keys = dataToPrint.keySet();
         FileWriter writer = null;
         try
@@ -36,12 +33,10 @@ public class Writer implements IWriter{
 	        for(String key: keys){
 	        	writer.write(key + " : " + dataToPrint.get(key) + "\n");
 	        }
-        }catch (IOException e)
-        {
+        }catch (IOException e) {
         	e.printStackTrace();
         }
-        finally
-        {
+        finally {
 				try {
 					writer.close();
 				} catch (IOException e) {

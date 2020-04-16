@@ -33,6 +33,7 @@ public class CreateOrderData implements ICreate {
 	
 	@Override
 	public Map<String, Integer> treeMapCreation(List<String> list){
+		this.listToRead = list;
 		it = listToRead.listIterator();
 		treeMap = new TreeMap<String, Integer>();
 		while(it.hasNext()){
