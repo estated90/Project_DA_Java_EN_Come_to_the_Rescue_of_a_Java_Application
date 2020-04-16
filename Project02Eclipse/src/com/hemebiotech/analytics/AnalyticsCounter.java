@@ -41,6 +41,15 @@ public class AnalyticsCounter implements IAnalyticsCounter
 	IWriter createFileOut = null;
 	
 	//Default builder
+	public AnalyticsCounter() {
+		System.out.println("Reading the file");
+		this.filePath = null;
+		this.readDataFromFile = null;
+		this.treeMapCreation = null;
+		this.createFileOut = null;
+	}
+		
+	//Builder with parameters
 	public AnalyticsCounter(String filePath,IReader readDataFromFile, ICreate treeMapCreation, IWriter createFileOut) {
 		super();
 		System.out.println("Reading the file");
