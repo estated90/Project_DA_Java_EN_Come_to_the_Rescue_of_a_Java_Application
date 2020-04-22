@@ -16,11 +16,12 @@ public class ReadDataFromFile implements IReader {
 	
 	private String filePath;
 
-	/**
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
-	 */
+
 	
 	public ReadDataFromFile () {}
+	/**
+	 * @param filePathToRead a full or partial path to file with symptom strings in it, one per line
+	 */
 	
 	public List<String> getData(String filePathToRead) {
 		this.filePath = filePathToRead;

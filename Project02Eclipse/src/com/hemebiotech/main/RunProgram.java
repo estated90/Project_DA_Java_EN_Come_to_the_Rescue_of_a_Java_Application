@@ -1,7 +1,6 @@
 package com.hemebiotech.main;
 
 import com.hemebiotech.analytics.*;
-import com.hemebiotech.reader.IReader;
 import com.hemebiotech.reader.ReadDataFromFile;
 import com.hemebiotech.sort.CreateOrderData;
 import com.hemebiotech.writer.Writer;
@@ -14,7 +13,7 @@ import com.hemebiotech.writer.Writer;
  *
  * @version : 1.1
  *
- * @see analyticscounter
+ * @see AnalyticsCounter
  *
  * @author Nicolas
  *

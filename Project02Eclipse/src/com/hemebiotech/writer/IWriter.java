@@ -10,6 +10,7 @@ import java.util.Map;
 public interface IWriter{
 	/**
 	 * Read the Map and write it line after line
+	 * @param treeMap receive the data as a tree map with a list of string as key and integer as dependency
 	 * 
 	 */
 	public void newFileOut(Map<String, Integer> treeMap);

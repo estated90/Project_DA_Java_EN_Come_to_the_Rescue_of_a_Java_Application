@@ -13,7 +13,7 @@ import java.util.List;
 public interface IReader {
 	/**
 	 * If no data is available, return an empty List
-	 * @param filePath 
+	 * @param filePathToRead receive a partial file path.
 	 * 
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 	 */

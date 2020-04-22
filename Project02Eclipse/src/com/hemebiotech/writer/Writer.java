@@ -16,11 +16,13 @@ public class Writer implements IWriter{
     
 	private Map<String,Integer> dataToPrint;
 
+
+	public Writer(){}
+	
 	/**
 	 * 
 	 * @param treeMap of the data top write with parameters String and Integer
 	 */
-	public Writer(){}
 	
 	@Override
 	public void newFileOut(Map<String, Integer> treeMap) {
