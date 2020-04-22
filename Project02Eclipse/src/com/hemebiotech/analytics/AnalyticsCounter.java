@@ -49,7 +49,13 @@ public class AnalyticsCounter implements IAnalyticsCounter
 		this.createFileOut = 	null;
 	}
 		
-	//Builder with parameters
+	/**
+	 * 
+	 * @param filePath String receive from the runprogram function
+	 * @param readDataFromFile builder of the interface to read the file
+	 * @param treeMapCreation builder of the interface to order and count the file
+	 * @param createFileOut builder of the interface to write the final file
+	 */
 	public AnalyticsCounter(String filePath,IReader readDataFromFile, ICreate treeMapCreation, IWriter createFileOut) {
 		super();
 		System.out.println("Reading the file");
@@ -59,6 +65,9 @@ public class AnalyticsCounter implements IAnalyticsCounter
 		this.createFileOut = 	createFileOut;
 	}
 	//Where the difference part of the program take place
+	/**
+	 * runProcess will call all the classes to run the program step by step
+	 */
 	public void runProcess() {
 		listFromFile = 	readDataFromFile.getData(filePath);
 		dataToPrint = 	treeMapCreation.treeMapCreation(listFromFile);

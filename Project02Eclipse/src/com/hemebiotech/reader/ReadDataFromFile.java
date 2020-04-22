@@ -17,10 +17,15 @@ public class ReadDataFromFile implements IReader {
 	private String filePath;
 
 
-	
-	public ReadDataFromFile () {}
 	/**
+	 * Simple implementation
+	 */
+	public ReadDataFromFile () {}
+	
+	/**
+	 * Will read the file line by line and add them to a List with duplicates. The exception are dealt directly and manage when closing the ressources
 	 * @param filePathToRead a full or partial path to file with symptom strings in it, one per line
+	 * @return a list of String with duplicates inside
 	 */
 	
 	public List<String> getData(String filePathToRead) {
@@ -33,7 +38,6 @@ public class ReadDataFromFile implements IReader {
 			try {
 				reader = 	new BufferedReader (new FileReader(filePath));
 				line = 		reader.readLine();
-				
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();

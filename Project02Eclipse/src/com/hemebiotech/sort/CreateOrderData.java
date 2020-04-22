@@ -19,11 +19,12 @@ public class CreateOrderData implements ICreate {
 	private Map<String, Integer> 	treeMap;
 	
 	/**
+	 * Simple implementation
 	 */
 	public CreateOrderData(){}
 	
 	/**
-	 * Function to search in the TreeMap for existing value
+	 * Function to search in the TreeMap for existing value. 
 	 * @param lookedValue the key to look for
 	 * @return a boolean to advise if the value exist or not
 	 */
@@ -31,6 +32,11 @@ public class CreateOrderData implements ICreate {
         return treeMap.containsKey(lookedValue);
     }
 	
+    /**
+     * The program will read all the string in the List. it will check if the value exists or not. if not, it will be added with a value of 1. If the value exist the program will add a +1 to its occurrence.
+     @param list list of string with duplicates
+     @return a treemap ordered and counted
+     */
 	@Override
 	public Map<String, Integer> treeMapCreation(List<String> list){
 		this.listToRead = list;

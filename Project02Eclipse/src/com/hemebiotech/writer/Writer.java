@@ -16,22 +16,24 @@ public class Writer implements IWriter{
     
 	private Map<String,Integer> dataToPrint;
 
-
+	/**
+	 * Simple implementation
+	 */
 	public Writer(){}
 	
 	/**
-	 * 
+	 * will write all the data of the treemap and write it in the file line by line.
+	 * The exception are dealt directly and close the ressources
 	 * @param treeMap of the data top write with parameters String and Integer
 	 */
-	
 	@Override
 	public void newFileOut(Map<String, Integer> treeMap) {
-		this.dataToPrint = treeMap;
-        Set<String> keys = dataToPrint.keySet();
+		this.dataToPrint = 	treeMap;
+        Set<String> keys = 	dataToPrint.keySet();
         FileWriter writer = null;
         try
         {
-	        writer = new FileWriter ("result.out");
+	        writer = 		new FileWriter ("result.out");
 	        for(String key: keys){
 	        	writer.write(key + " : " + dataToPrint.get(key) + "\n");
 	        }
