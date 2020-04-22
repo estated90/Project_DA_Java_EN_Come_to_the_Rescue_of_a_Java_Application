@@ -16,7 +16,7 @@ import com.hemebiotech.writer.Writer;
  *
  * @see analyticscounter
  *
- * @author nicolas
+ * @author Nicolas
  *
  */
 

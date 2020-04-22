@@ -30,8 +30,8 @@ public class ReadDataFromFile implements IReader {
 		
 		if (filePath != null) {
 			try {
-				reader = new BufferedReader (new FileReader(filePath));
-				line = reader.readLine();
+				reader = 	new BufferedReader (new FileReader(filePath));
+				line = 		reader.readLine();
 				
 				while (line != null) {
 					result.add(line);

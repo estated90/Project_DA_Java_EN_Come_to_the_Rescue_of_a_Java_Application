@@ -31,37 +31,37 @@ import com.hemebiotech.writer.Writer;
 public class AnalyticsCounter implements IAnalyticsCounter
 {
 	// Stock the path of the file
-	private String filePath;
-	private Map<String, Integer> dataToPrint;
-	private List<String> listFromFile;
+	private String 					filePath;
+	private Map<String, Integer> 	dataToPrint;
+	private List<String> 			listFromFile;
 	
 	//Instances declaration
-	IReader readDataFromFile = null;
-	ICreate treeMapCreation = null;
-	IWriter createFileOut = null;
+	IReader readDataFromFile = 	null;
+	ICreate treeMapCreation = 	null;
+	IWriter createFileOut = 	null;
 	
 	//Default builder
 	public AnalyticsCounter() {
 		System.out.println("Reading the file");
-		this.filePath = null;
+		this.filePath = 		null;
 		this.readDataFromFile = null;
-		this.treeMapCreation = null;
-		this.createFileOut = null;
+		this.treeMapCreation = 	null;
+		this.createFileOut = 	null;
 	}
 		
 	//Builder with parameters
 	public AnalyticsCounter(String filePath,IReader readDataFromFile, ICreate treeMapCreation, IWriter createFileOut) {
 		super();
 		System.out.println("Reading the file");
-		this.filePath = filePath;
+		this.filePath = 		filePath;
 		this.readDataFromFile = readDataFromFile;
-		this.treeMapCreation = treeMapCreation;
-		this.createFileOut = createFileOut;
+		this.treeMapCreation = 	treeMapCreation;
+		this.createFileOut = 	createFileOut;
 	}
 	//Where the difference part of the program take place
 	public void runProcess() {
-		listFromFile = readDataFromFile.getData(filePath);
-		dataToPrint = treeMapCreation.treeMapCreation(listFromFile);
+		listFromFile = 	readDataFromFile.getData(filePath);
+		dataToPrint = 	treeMapCreation.treeMapCreation(listFromFile);
 		createFileOut.newFileOut(dataToPrint);
 	}
 	//Getter to return the value of the variable
